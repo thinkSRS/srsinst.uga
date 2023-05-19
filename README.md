@@ -6,7 +6,7 @@ mass spectra of atmospheric gas samples from
 that runs on a graphic user interface (GUI) based on [srsgui](https://pypi.org/project/srsgui/).
 
 
-![screenshot](https://github.com/thinkSRS/srsinst.rga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png " ")
+![screenshot](https://github.com/thinkSRS/srsinst.uga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png " ")
 
 ## Installation
 You need a working Python with `pip` (Python package installer) installed. If you don't,
