@@ -1,3 +1,7 @@
+##! 
+##! Coptright(c) 2023 Stanford Research Systems, All right reserved
+##! Subject to the MIT License
+##! 
 
 from srsgui.inst.component import Component
 from srsgui.inst.instrument import Instrument, SerialInterface, TcpipInterface

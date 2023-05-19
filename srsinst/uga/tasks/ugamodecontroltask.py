@@ -1,3 +1,7 @@
+##! 
+##! Coptright(c) 2023 Stanford Research Systems, All right reserved
+##! Subject to the MIT License
+##! 
 
 import time
 from srsinst.uga import Keys

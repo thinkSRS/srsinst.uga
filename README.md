@@ -3,7 +3,7 @@
 `srsinst.uga` contains a Python instrument driver to control and acquire 
 mass spectra of atmospheric gas samples from 
 [Stanford Research Systems (SRS) Universal Gas Analyzer (UGA)](https://thinksrs.com/products/uga.html). It also has a collection of Python scripts 
-that runs on a graphic user interface (GUI) based on [srsgui](https://pypi.org/project/srsgui/).
+that runs on a graphic user interface (GUI) based on [srsgui](https://thinksrs.github.io/srsgui/).
 
 
 ![screenshot](https://github.com/thinkSRS/srsinst.uga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png " ")
