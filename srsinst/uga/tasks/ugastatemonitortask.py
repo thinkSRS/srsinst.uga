@@ -30,12 +30,12 @@ class UGAStateMonitorTask(Task):
         self.ax = self.figure.subplots(nrows=1, ncols=2, sharex=True)
 
         self.pressure_plot = TimePlot(self, self.ax[0], 'Pressure',
-            ['IG pressure', 'PG pressure', 'CM pressure'])
+            ['Ion Gauge', 'Pirani Gauge', 'CM Gauge'])
         self.pressure_plot.ax.set_yscale('log')
 
         self.temperature_plot = TimePlot(self, self.ax[1], 'Temperature',
-            ['Chamber Temperature', 'Elbow Temperature', 'Sample Inlet Temperature',
-             'Capillary Temperature', 'Turbo Pump Temperature'])
+            ['Chamber', 'Elbow', 'Sample Inlet',
+             'Capillary', 'Turbo Pump'])
 
     def test(self):
         while True:
@@ -45,7 +45,7 @@ class UGAStateMonitorTask(Task):
             self.display_device_info(device_name=self.params[self.InstrumentName], update=True)
 
             self.pressure_plot.add_data([self.uga.ig.get_pressure(), self.uga.rp.get_pressure(),
-                         self.uga.bp.get_pressure()])
+                         self.uga.bp.get_pressure()], True)
 
             self.temperature_plot.add_data([self.uga.temperature.chamber, self.uga.temperature.elbow,
                          self.uga.temperature.sample_inlet, self.uga.temperature.capillary,

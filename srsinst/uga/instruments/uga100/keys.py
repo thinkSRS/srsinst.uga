@@ -29,6 +29,7 @@ class Keys:
     TurningIdle8 = 'Turning idle (8)'
     TurningIdle9 = 'Turning idle (9)'
     TurningIdle10 = 'Turning idle (10)'
+    TurningIdle11 = 'Turning idle (11)'
 
     Error = 'Error'
 

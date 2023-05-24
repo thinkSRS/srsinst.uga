@@ -35,7 +35,7 @@ class UGAModeControlTask(Task):
 
         self.uga = get_uga(self, self.params[self.InstrumentName])
         print(self.uga.status.id_string)
-        while self.uga.status.error != 0:
+        while self.uga.status.error != Keys.OK:
             pass
 
         self.immediate_state = self.uga.mode.state
@@ -86,7 +86,7 @@ class UGAModeControlTask(Task):
             self.immediate_state = Keys.Start
             self.final_state = Keys.Ready
 
-        error_code = self.uga.status.error
+        error_code = self.uga.status.error_number
         if error_code > 10:
             raise ValueError('Error "{}" when trying to change to  {}'
                              .format(self.uga.status.error_message[error_code], self.final_state))

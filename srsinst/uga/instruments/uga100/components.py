@@ -44,6 +44,7 @@ class Mode(Component):
         Keys.TurningIdle8: 8,
         Keys.TurningIdle9: 9,
         Keys.TurningIdle10: 10,
+        Keys.TurningIdle11: 11,
         Keys.Error: 12,
     }
 
@@ -141,12 +142,12 @@ class IonGauge(Component):
     """
     IonGauge component has two commands and one method:
 
-    The state command turn on and off the ion gauge.
-    The ion gauge can be turned on, only when the turbo pump is on or idle.
+    * Command 'state' turns on and off the ion gauge.
+      Ion gauge can be turned on, only when the turbo pump is on or idle.
 
-    The ion gauge has two filaments and if one is broken, you can select the other one.
+    * Ion gauge has two filaments and if one is broken, you can select the other one.
 
-    The method get_pressure() return the ion gauge pressure reading in Torr.
+    * Method get_pressure() returns the ion gauge pressure reading in Torr.
     """
     StateDict = {
         Keys.Off: 0,
@@ -193,7 +194,7 @@ class Heaters(Component):
 class Temperature(Component):
     """
     Temperature component contains temperature measurements from 5 sensors.
-    If the temperature calue us 255, the sensor is not working properly.
+    If the temperature value is 255, the sensor is not working properly.
     """
     turbo_pump = IntGetCommand('ZQTT', '°C')
     elbow = IntGetCommand('ZQTA', '°C')
@@ -210,12 +211,13 @@ class Pressure(Component):
     """
     Pressure component has two commands:
 
-         Values are pressure measured with gauges:
+        * Values are pressure measured with gauges:
 
             Pressure from Pirani and CM gauges are in the unit of uTorr (1e-6 Torr).
             pressure from IG is in the unit of pTorr (1e-12 Torr) regardless of the display unit
 
-         Display_unit is to select the pressure unit for the front panel display.
+
+        * Display_unit is to select the pressure unit for the front panel display.
 
             Reply from values command always in the unit of Torr.
     """
@@ -236,7 +238,6 @@ class Pressure(Component):
     }
     values = IntIndexGetCommand('ZQAD', 3, 0, GaugeDict)
     display_unit = DictCommand('ZPPU', UnitDict)
-
 
 
 class Ethernet(Component):
@@ -285,9 +286,10 @@ class Status(Component):
     changed = IntGetCommand('ZBCT')
     changing = IntGetCommand('ZBTT')
     error = DictGetCommand('ZERR', Keys.ErrorMessageDict)
+    error_number = IntGetCommand('ZERR')
     error_message = IndexGetCommand('ZEDS', index_max=126)
 
-    exclude_capture = [error_message]
+    exclude_capture = [error_number, error_message]
 
     def get_status_text(self):
         out_buffer = ''
