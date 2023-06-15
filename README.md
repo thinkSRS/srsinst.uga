@@ -2,15 +2,18 @@
 
 `srsinst.uga` contains a Python instrument driver to control and acquire 
 mass spectra of atmospheric gas samples from 
-[Stanford Research Systems (SRS) Universal Gas Analyzer (UGA)](https://thinksrs.com/products/uga.html). It also has a collection of Python scripts 
-that runs on a graphic user interface (GUI) based on [srsgui](https://thinksrs.github.io/srsgui/).
+[Stanford Research Systems (SRS) Universal Gas Analyzer (UGA)](https://thinksrs.com/products/uga.html).
+It also provides a collection of Python scripts that runs on a graphic user interface (GUI) based on
+[srsgui](https://thinksrs.github.io/srsgui/) and 
+[srsinst.rga](https://thinksrs.github.io/srsinst.rga/). 
+  
 
 
 ![screenshot](https://github.com/thinkSRS/srsinst.uga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png " ")
 
 ## Installation
-You need a working Python with `pip` (Python package installer) installed. If you don't,
-[install Python 3](https://realpython.com/installing-python/) to your system.
+You need a working Python version 3.7 or later with `pip` (Python package installer) installed.
+If you don't, [install Python 3](https://www.python.org/) to your system.
 
 To install `srsinst.uga` as an instrument driver only, use Python package installer `pip` 
 from the command line.
@@ -165,5 +168,6 @@ When the ion gauge is on, you can get a pressure measurement with the get_pressu
     1.115742e-07
 
 The most important component in a UGA is the Residual Gas Analyzer (RGA). 
-It has a separate [instrument driver package](https://pypi.org/project/srsinst.rga/) 
-to use an independent RGA. Refer to its documentation for RGA component usage.  
+It has [a separate instrument driver package](https://github.com/thinkSRS/srsinst.rga) 
+to use an independent RGA. 
+Refer to [RGA documentation] (https://github.com/thinkSRS/srsinst.rga) for RGA component usage.  
