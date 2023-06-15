@@ -171,3 +171,8 @@ The most important component in a UGA is the Residual Gas Analyzer,
 which has the separate [RGA instrument driver package](https://github.com/thinkSRS/srsinst.rga)
  for its independent usage.
 Refer to [RGA documentation](https://thinksrs.github.io/srsinst.rga/) for RGA component usage.  
+
+    >>> uga.rga.status.id_string
+    'SRSRGA200VER0.24SN12226'
+    >>> uga.rga.ionizer.emission_current
+    0.9976
