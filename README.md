@@ -6,8 +6,6 @@ mass spectra of atmospheric gas samples from
 It also provides a collection of Python scripts that runs on a graphic user interface (GUI) based on
 [srsgui](https://thinksrs.github.io/srsgui/) and 
 [srsinst.rga](https://thinksrs.github.io/srsinst.rga/). 
-  
-
 
 ![screenshot](https://github.com/thinkSRS/srsinst.uga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png " ")
 
@@ -167,7 +165,7 @@ When the ion gauge is on, you can get a pressure measurement with the get_pressu
     >>> uga.ig.get_pressure()
     1.115742e-07
 
-The most important component in a UGA is the Residual Gas Analyzer (RGA). 
-It has [a separate instrument driver package](https://github.com/thinkSRS/srsinst.rga) 
-to use an independent RGA. 
-Refer to [RGA documentation] (https://github.com/thinkSRS/srsinst.rga) for RGA component usage.  
+The most important component in a UGA is the Residual Gas Analyzer, 
+which has the separate [RGA instrument driver package](https://github.com/thinkSRS/srsinst.rga)
+ for its independent usage.
+Refer to [RGA documentation](https://thinksrs.github.io/srsinst.rga/) for RGA component usage.  
