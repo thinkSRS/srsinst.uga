@@ -35,5 +35,9 @@ version = {attr = "srsinst.uga.__version__"}
 full = ['matplotlib >= 3.6.2', 'pyside6']
 # For Dependency specification, Refer to PEP 631
 
+[project.urls]
+homepage = "https://github.com/thinkSRS/srsinst.uga"
+repository = "https://github.com/thinkSRS/srsinst.uga.git"
+
 [project.scripts]
 uga = "srsinst.uga.__main__:main"

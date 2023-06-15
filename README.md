@@ -165,6 +165,8 @@ When the ion gauge is on, you can get a pressure measurement with the get_pressu
     >>> uga.ig.get_pressure()
     1.115742e-07
 
+Commands in other components can be used in a similar way. 
+
 The most important component in a UGA is the Residual Gas Analyzer, 
 which has the separate [RGA instrument driver package](https://github.com/thinkSRS/srsinst.rga)
  for its independent usage.
