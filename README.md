@@ -7,7 +7,7 @@ It also provides a collection of Python scripts that runs on a graphic user inte
 [srsgui](https://thinksrs.github.io/srsgui/) and 
 [srsinst.rga](https://thinksrs.github.io/srsinst.rga/). 
 
-![screenshot](https://github.com/thinkSRS/srsinst.uga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png " ")
+![screenshot](https://github.com/thinkSRS/srsinst.uga/blob/main/docs/_static/image/UGA100_composition_analysis_screenshot.png?raw=true " ")
 
 ## Installation
 You need a working Python version 3.7 or later with `pip` (Python package installer) installed.
