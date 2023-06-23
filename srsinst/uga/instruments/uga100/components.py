@@ -129,7 +129,6 @@ class RGA(RGA100):
 
         self._parent = parent
         self._parent._children.append(self)
-        self._add_parent_to_index_commands()
         self.comm = parent.comm
         self.update_components()
 
@@ -187,8 +186,12 @@ class Heaters(Component):
     state = DictCommand('ZCHT', ModeDict, Mode.StateDict)
     bake_time = IntCommand('ZPBT', 'hr.')
     bake_time_remained = IntGetCommand('ZQBR', 'min.')
-    bake_temperature = IntIndexCommand('ZPTB', 1, 0, BakeHeaterDict, '°C')
-    sample_temperature = IntIndexCommand('ZPTH', 3, 0, HeaterDict, '°C')
+
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.bake_temperature = IntIndexCommand('ZPTB', 1, 0, Heaters.BakeHeaterDict, '°C')
+        self.sample_temperature = IntIndexCommand('ZPTH', 3, 0, Heaters.HeaterDict, '°C')
+        self.add_parent_to_index_commands()
 
 
 class Temperature(Component):
@@ -236,8 +239,12 @@ class Pressure(Component):
         Keys.MilliBar: 2,
         Keys.Bar: 3
     }
-    values = IntIndexGetCommand('ZQAD', 3, 0, GaugeDict)
     display_unit = DictCommand('ZPPU', UnitDict)
+
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.values = IntIndexGetCommand('ZQAD', 3, 0, Pressure.GaugeDict)
+        self.add_parent_to_index_commands()
 
 
 class Ethernet(Component):
@@ -287,9 +294,13 @@ class Status(Component):
     changing = IntGetCommand('ZBTT')
     error = DictGetCommand('ZERR', Keys.ErrorMessageDict)
     error_number = IntGetCommand('ZERR')
-    error_message = IndexGetCommand('ZEDS', index_max=126)
 
-    exclude_capture = [error_number, error_message]
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.error_message = IndexGetCommand('ZEDS', index_max=126)
+        self.add_parent_to_index_commands()
+
+        self.exclude_capture = [Status.error_number, self.error_message]
 
     def get_status_text(self):
         out_buffer = ''
