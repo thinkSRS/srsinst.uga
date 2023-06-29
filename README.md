@@ -41,16 +41,19 @@ If not,
 
 It will start the GUI application.
 
-Connect to an UGA from the Instruments menu.
-Select a task from the Task menu. The available tasks are to acquire data from UGA
-and to run various RGA scans.  Press the green arrow to run the selected task. 
+- Connect to an UGA from the Instruments menu.
+- Select a task from the Task menu. The available tasks are to acquire data from UGA
+  and to run various RGA scans.
+- Press the apply button, if you change parameters of the task.
+- Press the green arrow to run the selected task. 
 
-There is a tree view widget displaying commands to adjust interactively. 
-It can be accessed from the main menu/Docks/uga-Capture. Double-clicking on a value
-can change the command parameter, if allowed.
+There is a tree view widget displaying commands for interactive control. 
+It can be accessed from the main menu/Docks/uga-Capture. You can change the parameter of an item
+by Double-clicking on its value display, if allowed.
 
-You can write your own task or modify an existing one and run it from the application
-by adding it to a ".taskconfig" configuration file. 
+You can write your own task or modify an existing one and run it from the application.
+Refer to [Custom tasks](https://thinksrs.github.io/srsinst.rga/custom_tasks.html) section
+in the [srsinst.rga documentation](https://thinksrs.github.io/srsinst.rga/) for details.
 
 
 ## Use `srsinst.uga` as instrument driver
